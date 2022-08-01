@@ -1,0 +1,14 @@
+#root {
+  width: 100%;
+}
+
+.Banner{
+  position: fixed;
+  top: 0;
+  padding: 2rem;
+  background-color: brown;
+  width: 100%;
+}
+button{
+  margin: 0.5rem;
+}
