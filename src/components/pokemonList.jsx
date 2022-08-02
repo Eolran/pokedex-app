@@ -1,16 +1,16 @@
 import '../App.css'
+import PokeCard from './PokeCard'
 import { usePokemons } from '../functions/getPokemons';
 
+
 function PokemonsList() {
-    const pokemons = usePokemons()
-    console.log(pokemons);
-    for (let i = 0; i < pokemons.length; i++) {
-        console.log(pokemons[i]);
-        
-    }
+    const pokemonsList = usePokemons();
+
     return (
       <div className="PokemonList">
-        test
+        {
+            pokemonsList.map((pokemon) => <PokeCard pokemon = {pokemon} />)
+        }
       </div>
     )
   }
