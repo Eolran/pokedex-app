@@ -9,7 +9,7 @@ function PokemonsList() {
     return (
       <div className="PokemonList">
         {
-            pokemonsList.map((pokemon) => <PokeCard pokemon = {pokemon} />)
+            pokemonsList.map((pokemon) => <PokeCard pokemon = {pokemon} key={Date.now + pokemon.url.split("/")[6]} />)
         }
       </div>
     )
