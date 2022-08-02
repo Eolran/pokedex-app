@@ -1,9 +1,10 @@
 import '../App.css'
+import { Link } from "react-router-dom";
 
 
 function PokeCard({pokemon}) {
     return (
-        <div className="PokeCard">
+        <a href={'./'+pokemon.url.split("/")[6]} className="PokeCard">
             <div>
                 <img src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"+ pokemon.url.split("/")[6] +".png"} alt="" />
             </div>
@@ -13,7 +14,7 @@ function PokeCard({pokemon}) {
             <span>
                n°{pokemon.url.split("/")[6]}
             </span>
-        </div>
+        </a>
     )
 }
 

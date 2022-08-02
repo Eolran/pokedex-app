@@ -14,3 +14,17 @@ export function usePokemons() {
 
     return pokemons;
 }
+
+export function getPokemon() {
+    const [pokemon, setPokemon] = useState([]);
+
+    useEffect(() => {
+        async function fetchData() {
+            const { data } = await axios.get('https://pokeapi.co/api/v2/pokemon/1');
+            setPokemon(data);
+        }
+        fetchData();
+    }, []); 
+
+    return pokemon;
+}
