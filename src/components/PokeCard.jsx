@@ -5,11 +5,14 @@ function PokeCard({pokemon}) {
     return (
         <div className="PokeCard">
             <div>
-                <img src="" alt="" />
+                <img src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"+ pokemon.url.split("/")[6] +".png"} alt="" />
             </div>
             <h2>
-                {pokemon.name};
+                {pokemon.name}
             </h2>
+            <span>
+               n°{pokemon.url.split("/")[6]}
+            </span>
         </div>
     )
 }

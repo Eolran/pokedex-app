@@ -3,11 +3,12 @@
 }
 
 .Banner{
-  position: fixed;
+  position: sticky;
   top: 0;
   padding: 2rem;
   background-color: brown;
   width: 100%;
+  margin-bottom: 2rem;
 }
 button{
   margin: 0.5rem;
@@ -29,4 +30,33 @@ input{
 
 .justify-center{
   justify-content: center;
+}
+
+.PokemonList{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.PokeCard{
+  text-align: center;
+  width: 10%;
+  display: flex;
+  flex-direction: column;
+  background-color: blanchedalmond;
+  padding: 3rem;
+  margin: 3rem;
+}
+
+.PokeCard h2{
+  color: black;
+  text-transform: capitalize;
+}
+.PokeCard span{
+  color: grey;
+  font-size: 14px;
+}
+.PokeCard img{
+  width: 150px;
+  height: 150px;
 }
