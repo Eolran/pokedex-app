@@ -1,11 +1,12 @@
 import reactLogo from './assets/react.svg'
 import './App.css'
+import Search from './search'
 
 function App() {
 
   return (
     <div className="App">
-      test
+      <Search />
     </div>
   )
 }

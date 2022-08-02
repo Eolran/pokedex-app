@@ -1,12 +1,14 @@
 import './App.css'
 
-function App() {
+function Search() {
 
-  return (
-    <div className="App">
-      test
-    </div>
-  )
+    return (
+        <div className="Search">
+            <div className="d-flex justify-center align-start">
+                <input type="text" />
+            </div>
+        </div>
+    )
 }
 
-export default App
+export default Search

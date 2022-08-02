@@ -10,6 +10,8 @@ function Banner() {
       <button>
         Recherche
       </button>
+
+      
     </nav>
   )
 }
