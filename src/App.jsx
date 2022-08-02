@@ -1,15 +1,15 @@
 import './App.css'
 import Search from './search'
-import { usePokemons } from './functions/getPokemons';
+import PokemonList from './components/pokemonList'
 
 
 
 function App() {
-  usePokemons()
 
   return (
     <div className="App">
       <Search />
+      <PokemonList />
     </div>
   )
 }
