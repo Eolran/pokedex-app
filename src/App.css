@@ -7,8 +7,9 @@
   top: 0;
   padding: 2rem;
   background-color: brown;
-  width: 100%;
+  width: auto;
   margin-bottom: 2rem;
+  z-index: 10;
 }
 button{
   margin: 0.5rem;
@@ -39,6 +40,7 @@ input{
 }
 
 .PokeCard{
+  position: relative;
   text-align: center;
   width: 10%;
   display: flex;
@@ -46,6 +48,10 @@ input{
   background-color: blanchedalmond;
   padding: 3rem;
   margin: 3rem;
+  transition: ease-in-out 0.5s;
+}
+.PokeCard:hover{
+  bottom: 5px;
 }
 
 .PokeCard h2{
