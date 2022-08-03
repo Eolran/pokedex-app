@@ -20,7 +20,7 @@ export function getPokemon(id) {
 
     useEffect(() => {
         async function fetchData() {
-            const { data } = await axios.get('https://pokeapi.co/api/v2/pokemon/'+id);  
+            const { data } = await axios.get('https://pokeapi.co/api/v2/pokemon/'+id);
             setPokemon(data);
         }
         fetchData();
@@ -29,12 +29,40 @@ export function getPokemon(id) {
     return pokemon;
 }
 
-export function getAbility() {
+export function getPokemonSpecies(id) {
+    const [pokemonSpecies, setPokemonSpecies] = useState(null);
+
+    useEffect(() => {
+        async function fetchData() {
+            const { data } = await axios.get('https://pokeapi.co/api/v2/pokemon-species/'+id);
+            setPokemonSpecies(data);
+        }
+        fetchData();
+    }, []); 
+
+    return pokemonSpecies;
+}
+
+export function getEvolutionChain(id) {
+    const [EvolutionChain, setEvolutionChain] = useState(null);
+
+    useEffect(() => {
+        async function fetchData() {
+            const { data } = await axios.get('https://pokeapi.co/api/v2/evolution-chain/'+id);
+            setEvolutionChain(data);
+        }
+        fetchData();
+    }, []); 
+
+    return EvolutionChain;
+}
+
+export function getAbility(id) {
     const [pokeAbility, setPokeAbility] = useState(null);
 
     useEffect(() => {
         async function fetchData() {
-            const { data } = await axios.get('https://pokeapi.co/api/v2/ability/65');
+            const { data } = await axios.get('https://pokeapi.co/api/v2/ability/'+id);
             setPokeAbility(data);
         }
         fetchData();

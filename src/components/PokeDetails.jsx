@@ -1,5 +1,5 @@
 import '../App.css'
-import { getPokemon } from '../functions/getPokemons';
+import { getPokemon, getEvolutionChain, getPokemonSpecies } from '../functions/getPokemons';
 import { useParams } from "react-router-dom";
 import { colours } from "../assets/colors";
 
@@ -8,7 +8,13 @@ function PokeDetails() {
     console.log(id);
 
     const pokemonDetails = getPokemon(id);
+    const pokemonSpecies = getPokemonSpecies(id);
+    console.log(pokemonSpecies);
+    const EvolutionChain = getEvolutionChain(pokemonSpecies.evolution_chain.url.split("/")[6]);
+    console.log(EvolutionChain);
     console.log(pokemonDetails);
+
+    pokemonDetails && pokemonDetails.abilities;
 
     return (
         <div className="PokeDetails">
@@ -50,10 +56,12 @@ function PokeDetails() {
                     <span>Speed</span>
                     <span>{pokemonDetails.stats[5].base_stat}</span>
                 </div>
-                <div className='pokeBold pokeStat'>
+                <div className='pokeBold pokeStat pokeAbilities flex-column'>
                     <span>Abilities</span>
                     <span>
-                        test
+                        {
+                            pokemonDetails.abilities.map(element => (element.ability.name)).join(' ')
+                        }
                     </span>
                 </div>
             </div>}
