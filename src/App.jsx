@@ -1,23 +1,22 @@
 import { react } from "react";
 import './App.css'
-import Search from './search'
 import PokemonList from './components/pokemonList'
 import PokeDetails from './components/PokeDetails'
-// import { BrowserRouter, Route } from "react-router-dom";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 
 
 function App() {
 
   return (
-
-    <div className="App">
-      {/* <Search />
-      <PokemonList /> */}
-      <PokeDetails />
-
-    </div>
-
+    <BrowserRouter>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<PokemonList />} />
+          <Route path="/pokemon/:id" element={<PokeDetails />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   )
 }
 
