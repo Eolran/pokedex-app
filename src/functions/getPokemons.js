@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 export function usePokemons() {
-    const [pokemons, setPokemons] = useState([]);
+    const [pokemons, setPokemons] = useState(null);
 
     useEffect(() => {
         async function fetchData() {
@@ -16,7 +16,7 @@ export function usePokemons() {
 }
 
 export function getPokemon() {
-    const [pokemon, setPokemon] = useState([]);
+    const [pokemon, setPokemon] = useState(null);
 
     useEffect(() => {
         async function fetchData() {
