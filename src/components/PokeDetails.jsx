@@ -1,49 +1,60 @@
 import '../App.css'
 import { getPokemon } from '../functions/getPokemons';
-
+import { useParams } from "react-router-dom";
+import { colours } from "../assets/colors";
 
 function PokeDetails() {
-    const pokemonDetails = getPokemon();
+    const {id} = useParams();
+    console.log(id);
+
+    const pokemonDetails = getPokemon(id);
     console.log(pokemonDetails);
+
     return (
-        <div className="PokeDetails d-flex">
+        <div className="PokeDetails">
             <div className='d-flex flex-column'>
-                <h2>
+                <h2 className='pokeBold pokeStat'>
                     { pokemonDetails &&  pokemonDetails.name}
                 </h2>
-                <span>
+                <span className='pokeLight'>
                     lv
                 </span>
-                <img src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"} alt="" />
-                <div className='d-flex flex-column'>
+                <img src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"+id+".png"} alt="" />
+                <div className='d-flex flex-column pokeBold'>
                     <span>Items</span>
                     <span>None</span>
                 </div>
             </div>
-            {pokemonDetails && <div>
-                <div>
+            {pokemonDetails && <div className='pokeStats'>
+                <div className='pokeBold pokeStat'>
                     <span>HP</span>
                     <span>{pokemonDetails.stats[0].base_stat}</span>
                 </div>
-                <div>
+                <div className='pokeLight pokeStat'>
                     <span>Attack</span>
                     <span>{pokemonDetails.stats[1].base_stat}</span>
                 </div>
-                <div>
+                <div className='pokeBold pokeStat'>
                     <span>Defense</span>
                     <span>{pokemonDetails.stats[2].base_stat}</span>
                 </div>
-                <div>
+                <div className='pokeLight pokeStat'>
                     <span>SP.Atk</span>
                     <span>{pokemonDetails.stats[3].base_stat}</span>
                 </div>
-                <div>
+                <div className='pokeBold pokeStat'>
                     <span>SP.Def</span>
                     <span>{pokemonDetails.stats[4].base_stat}</span>
                 </div>
-                <div>
+                <div className='pokeLight pokeStat'>
                     <span>Speed</span>
                     <span>{pokemonDetails.stats[5].base_stat}</span>
+                </div>
+                <div className='pokeBold pokeStat'>
+                    <span>Abilities</span>
+                    <span>
+                        test
+                    </span>
                 </div>
             </div>}
 
