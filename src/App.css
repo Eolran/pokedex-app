@@ -26,7 +26,7 @@ input {
 }
 
 .flex-column {
-  flex-direction: column;
+  flex-direction: column !important;
 }
 
 .mx-auto {
@@ -92,14 +92,20 @@ input {
   height: 150px;
 }
 
+.PokeDetails h2 {
+  margin: 0;
+}
+
 .pokeBold {
   background: linear-gradient(to right, #6e5649 80%, transparent);
   padding: 5px;
+  text-transform: capitalize;
 }
 
 .pokeLight {
   background: linear-gradient(to right, #958377 80%, transparent);
   padding: 5px;
+  text-transform: capitalize;
 }
 
 .pokeStat {
