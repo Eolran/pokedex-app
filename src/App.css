@@ -2,7 +2,7 @@
   width: 100%;
 }
 
-.Banner{
+.Banner {
   position: sticky;
   top: 0;
   padding: 2rem;
@@ -11,39 +11,40 @@
   margin-bottom: 2rem;
   z-index: 10;
 }
-button{
+
+button {
   margin: 0.5rem;
 }
 
-input{
+input {
   width: 50%;
   margin: auto 0 auto 0;
 }
 
-.d-flex{
+.d-flex {
   display: flex;
 }
 
-.flex-column{
+.flex-column {
   flex-direction: column;
 }
 
-.mx-auto{
+.mx-auto {
   margin-left: auto;
   margin-right: auto;
 }
 
-.justify-center{
+.justify-center {
   justify-content: center;
 }
 
-.PokemonList{
+.PokemonList {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-.PokeCard{
+.PokeCard {
   position: relative;
   text-align: center;
   width: 10%;
@@ -54,24 +55,57 @@ input{
   margin: 3rem;
   transition: ease-in-out 0.5s;
 }
-.PokeCard:hover{
+
+.PokeCard:hover {
   bottom: 5px;
 }
 
-.PokeCard h2{
+.PokeCard h2 {
   color: black;
   text-transform: capitalize;
 }
-.PokeCard span{
+
+.PokeCard span {
   color: grey;
   font-size: 14px;
 }
-.PokeCard img{
+
+.PokeCard img {
   width: 150px;
   height: 150px;
 }
 
-.PokeDetails img{
+.PokeDetails {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  background: repeating-linear-gradient(45deg,
+      #606dbc,
+      #606dbc 10px,
+      #465298 10px,
+      #465298 20px);
+}
+
+.PokeDetails img {
   width: 150px;
   height: 150px;
+}
+
+.pokeBold {
+  background: linear-gradient(to right, #6e5649 80%, transparent);
+  padding: 5px;
+}
+
+.pokeLight {
+  background: linear-gradient(to right, #958377 80%, transparent);
+  padding: 5px;
+}
+
+.pokeStat {
+  width: 450px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: black;
 }
