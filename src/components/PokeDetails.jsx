@@ -4,15 +4,22 @@ import { useParams } from "react-router-dom";
 import { colours } from "../assets/colors";
 
 function PokeDetails() {
+    let EvolutionChain;
     const {id} = useParams();
     console.log(id);
 
     const pokemonDetails = getPokemon(id);
     const pokemonSpecies = getPokemonSpecies(id);
-    console.log(pokemonSpecies);
-    const EvolutionChain = getEvolutionChain(pokemonSpecies.evolution_chain.url.split("/")[6]);
-    console.log(EvolutionChain);
+    if (pokemonSpecies) {
+        EvolutionChain = getEvolutionChain(pokemonSpecies.evolution_chain.url);
+        EvolutionChain.then( res => {
+            console.log(res);
+        })
+    }
+    
     console.log(pokemonDetails);
+    console.log(pokemonSpecies);
+    console.log(EvolutionChain);
 
     pokemonDetails && pokemonDetails.abilities;
 

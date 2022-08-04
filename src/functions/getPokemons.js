@@ -43,18 +43,10 @@ export function getPokemonSpecies(id) {
     return pokemonSpecies;
 }
 
-export function getEvolutionChain(id) {
-    const [EvolutionChain, setEvolutionChain] = useState(null);
+export async function getEvolutionChain(id) {
 
-    useEffect(() => {
-        async function fetchData() {
-            const { data } = await axios.get('https://pokeapi.co/api/v2/evolution-chain/'+id);
-            setEvolutionChain(data);
-        }
-        fetchData();
-    }, []); 
-
-    return EvolutionChain;
+    const { data } = await axios.get(id);
+    return data;
 }
 
 export function getAbility(id) {
