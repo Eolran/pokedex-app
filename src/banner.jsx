@@ -6,7 +6,7 @@ function Banner() {
 
   return (
     <nav className="Banner">
-        <Link to="/home">
+        <Link to="/">
           <button>
             Accueil
           </button>

@@ -28,7 +28,7 @@ function getEvolutions(chain, evolutions = []) {
 }
 
 function PokeDetails() {
-    let pokedexList = JSON.parse(localStorage.getItem("pokedexList"));
+    let pokedexList = localStorage.getItem("pokedexList") ?JSON.parse(localStorage.getItem("pokedexList")): [];
     let EvolutionChain;
 
     let EvolveDetails = [];

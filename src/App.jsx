@@ -15,7 +15,7 @@ function App() {
     <Banner />
       <div className="App">
         <Routes>
-          <Route path="/home" element={<PokemonList />} />
+          <Route path="/" element={<PokemonList />} />
           <Route path="/pokedex" element={<PokedexList />} />
           <Route path="/pokemon/:id" element={<PokeDetails />} />
         </Routes>

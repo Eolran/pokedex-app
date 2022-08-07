@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 
 function PokeCard({ pokemon }) {
 
-    let pokedexList = JSON.parse(localStorage.getItem("pokedexList"));
+    let pokedexList = localStorage.getItem("pokedexList") ?JSON.parse(localStorage.getItem("pokedexList")): [];
 
     
     const dispatch = useDispatch()
