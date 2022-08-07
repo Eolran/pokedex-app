@@ -6,9 +6,10 @@ import { useDispatch } from 'react-redux';
 
 function PokeCard({ pokemon }) {
 
+    //Initialisation Pokedex si cache vidé
     let pokedexList = localStorage.getItem("pokedexList") ?JSON.parse(localStorage.getItem("pokedexList")): [];
 
-    
+    //Fonctions de gestion du Pokedex
     const dispatch = useDispatch()
     const PokedexInit= () => {
         console.log(pokemon);

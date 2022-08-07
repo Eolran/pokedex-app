@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux';
 
 function PokedexCard({ pokemon }) {
 
+    //On utilise seulement la fonction de REMOVE du Pokedex a l'intérieur de celui ci, pas besoin de la fonction d'ADD
     const dispatch = useDispatch()
     const PokedexRemove= () => {
         console.log(pokemon);

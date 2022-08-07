@@ -2,9 +2,10 @@ import '../App.css'
 import { getPokemon, getEvolutionChain, getPokemonSpecies } from '../functions/getPokemons';
 import { ADD, REMOVE } from '../functions/pokedex.service.js';
 import { useParams } from "react-router-dom";
-import { colours } from "../assets/colors";
 import { useDispatch } from "react-redux";
 
+
+//Récupération de la chaine d'évolution du Pokemon
 function getEvolutions(chain, evolutions = []) {
     if (chain.chain !== undefined) {
         const name = chain.chain.species?.name;
@@ -36,6 +37,7 @@ function PokeDetails() {
     const { id } = useParams();
     console.log(id);
 
+    //Gestions Objets et variables
     const pokemonDetails = getPokemon(id);
     const pokemonSpecies = getPokemonSpecies(id);
     if (pokemonSpecies) {
@@ -43,12 +45,6 @@ function PokeDetails() {
         EvolutionChain.then(res => {
             console.log(res);
             getEvolutions(res, EvolveDetails);
-//document.getElementById('evolveChain').innerHTML = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${element.id}.png
-            
-            // for (let i = 0; i < EvolveDetails.length; i++) {
-            //     document.getElementById('evolveChain').innerHTML += `<img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${EvolveDetails[i].id}.png' alt=''>`
-                
-            // }
 
             EvolveDetails.forEach(element => {
                 document.getElementById('evolveChain').innerHTML += `
@@ -64,6 +60,7 @@ function PokeDetails() {
         })
     }
 
+    // Gestion Pokedex
     const dispatch = useDispatch()
     const PokedexInit = () => {
         dispatch(ADD(pokemonDetails.species)) 
@@ -87,16 +84,6 @@ function PokeDetails() {
             
         }
     }
-
-    // if (pokedexList.find(pokemonName => pokemonName.name == pokemonDetails.name) != undefined) {
-    //     document.getElementById("pokedexBtn").innerHTML = "Remove from Pokedex";
-    // } else {
-    //     document.getElementById("pokedexBtn").innerHTML = "Add to Pokedex";
-    // }
-
-    console.log(pokemonDetails);
-    console.log(pokemonSpecies);
-    console.log(EvolveDetails);
 
     pokemonDetails && pokemonDetails.abilities;
 

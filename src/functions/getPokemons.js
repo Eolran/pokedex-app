@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
+//Récupération Liste Pokemon
 export function usePokemons(url) {
     const [pokemons, setPokemons] = useState([]);
 
@@ -16,6 +17,7 @@ export function usePokemons(url) {
     return pokemons;
 }
 
+//Récupération URL prochaine Liste Pokemon
 export function nextPokemons(url) {
     const [pokemonsNext, setPokemonsNext] = useState("");
 
@@ -30,6 +32,7 @@ export function nextPokemons(url) {
     return pokemonsNext;
 }
 
+//Récupération détail Pokemon
 export function getPokemon(id) {
     const [pokemon, setPokemon] = useState(null);
 
@@ -44,6 +47,7 @@ export function getPokemon(id) {
     return pokemon;
 }
 
+//Récupération détail Espèce Pokemon
 export function getPokemonSpecies(id) {
     const [pokemonSpecies, setPokemonSpecies] = useState(null);
 
@@ -58,12 +62,14 @@ export function getPokemonSpecies(id) {
     return pokemonSpecies;
 }
 
+//Récupération Objet Evolution
 export async function getEvolutionChain(id) {
 
     const { data } = await axios.get(id);
     return data;
 }
 
+//Récupération Objet Passif Pokemon
 export function getAbility(id) {
     const [pokeAbility, setPokeAbility] = useState(null);
 
