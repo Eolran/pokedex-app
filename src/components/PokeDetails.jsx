@@ -67,9 +67,11 @@ function PokeDetails() {
     const dispatch = useDispatch()
     const PokedexInit = () => {
         dispatch(ADD(pokemonDetails.species)) 
+        document.getElementById("pokedexBtn").innerHTML = '<img className="btnPokedex" src="https://www.svgrepo.com/show/276264/pokeball-pokemon.svg"  height="40px" width="40px" alt="pkball" />'
     }
     const PokedexRemove = () => {
         dispatch(REMOVE(pokemonDetails.species))
+        document.getElementById("pokedexBtn").innerHTML = '<img className="btnPokedex" src="https://www.svgrepo.com/show/388314/pokeball-one.svg"  height="40px" width="40px" alt="pkball" />';
     }
     function togglePokedex() {
         if (pokedexList.find(pokemonName => pokemonName.name == pokemonDetails.name) != undefined) {
@@ -82,6 +84,7 @@ function PokeDetails() {
             console.log("Fonction ADD")
 
             pokedexList = JSON.parse(localStorage.getItem("pokedexList"));
+            
         }
     }
 
@@ -125,9 +128,6 @@ function PokeDetails() {
                     <h2 className='pokeBold pokeStat'>
                         {pokemonDetails && pokemonDetails.name}
                     </h2>
-                    <span className='pokeLight'>
-                        lv
-                    </span>
                     <div className='pokeImg'>
                         <img src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + id + ".png"} alt="" />
                     </div>
@@ -172,9 +172,13 @@ function PokeDetails() {
                 </div>}
             </div>
 
-            <button id='pokedexBtn' onClick={() => { togglePokedex() }}>
-
-            </button>
+            <div className='d-flex'>
+                <button id='pokedexBtn' onClick={() => { togglePokedex() }}>
+                    <img className='btnPokedex' 
+                    src={pokedexList.find(pokemonName => pokemonName.name == pokedexList.name) != undefined ? "https://www.svgrepo.com/show/276264/pokeball-pokemon.svg": "https://www.svgrepo.com/show/388314/pokeball-one.svg"} 
+                    height="40px" width="40px" alt="pkball" />
+                </button>
+            </div>
             
             <h2 className='text-center'>Evolution Chain</h2>
             <div id='evolveChain' className='evolveChain'>

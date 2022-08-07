@@ -46,6 +46,7 @@ input {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .PokeCard {
@@ -74,6 +75,10 @@ input {
   font-size: 14px;
 }
 
+.PokeCard button {
+  background-color: transparent;
+}
+
 .PokeCard .PKMNImg {
   width: 150px;
   height: 150px;
@@ -89,8 +94,16 @@ input {
   justify-content: space-around;
 }
 
+.pokeBoxStats h2 {
+  color: black;
+}
+
 .PokeDetails h2 {
   margin: 0;
+}
+
+#pokedexBtn{
+  margin: 25px auto;
 }
 
 .pokeBold {
@@ -110,7 +123,7 @@ input {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  color: black;
+  color: white;
 }
 
 .evolveChain {
@@ -125,12 +138,14 @@ input {
   margin: 2rem;
   text-align: center;
   color: #958377;
-  padding: 0.5rem;
+  padding: 1.5rem;
 }
+
 .EvolveCard h2 {
   color: black;
   text-transform: capitalize;
 }
+
 .EvolveCard span {
   color: grey;
   font-size: 14px;
@@ -154,6 +169,7 @@ input {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .PokedexCard {
@@ -166,6 +182,9 @@ input {
   padding: 3rem;
   margin: 3rem;
   transition: ease-in-out 0.5s;
+}
+.PokedexCard button{
+  background-color: transparent;
 }
 
 .PokedexCard:hover {
@@ -185,4 +204,40 @@ input {
 .PokedexCard .PKMNImg {
   width: 150px;
   height: 150px;
+}
+
+
+
+@media screen and (max-width: 1290px) {
+  .PokeCard {
+    width: 15%;
+  }
+
+  .PokedexCard {
+    width: 15%;
+  }
+
+  .pokeBoxStats {
+    flex-direction: column;
+  }
+
+  .pokeStat {
+    width: 100%;
+  }
+
+  .evolveChain {
+    flex-direction: column;
+    width: fit-content;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .PokeCard {
+    width: 50%;
+  }
+
+  .PokedexCard {
+    width: 50%;
+  }
 }

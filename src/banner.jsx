@@ -16,7 +16,6 @@ function Banner() {
             Pokedex
           </button>
         </Link>
-      <Search />
 
       
     </nav>

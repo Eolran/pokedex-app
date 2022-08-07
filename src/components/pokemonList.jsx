@@ -26,10 +26,6 @@ function PokemonsList() {
         {
             pokemonsList.map((pokemon) => <PokeCard pokemon = {pokemon} key={Date.now + pokemon.url.split("/")[6]} />)
         }
-
-        <button onClick={ showMore }>
-            Afficher plus
-        </button>
       </div>
     )
   }
