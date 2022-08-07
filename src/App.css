@@ -38,6 +38,10 @@ input {
   justify-content: center;
 }
 
+.text-center{
+  text-align: center;
+}
+
 .PokemonList {
   display: flex;
   flex-direction: row;
@@ -70,26 +74,19 @@ input {
   font-size: 14px;
 }
 
-.PokeCard img {
+.PokeCard .PKMNImg {
   width: 150px;
   height: 150px;
 }
 
 .PokeDetails {
+  padding: 1rem;
+}
+
+.pokeBoxStats {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-
-  background: repeating-linear-gradient(45deg,
-      #606dbc,
-      #606dbc 10px,
-      #465298 10px,
-      #465298 20px);
-}
-
-.PokeDetails img {
-  width: 150px;
-  height: 150px;
 }
 
 .PokeDetails h2 {
@@ -114,4 +111,78 @@ input {
   flex-direction: row;
   justify-content: space-between;
   color: black;
+}
+
+.evolveChain {
+  display: flex;
+  justify-content: center;
+}
+
+.EvolveCard {
+  position: relative;
+  transition: ease-in-out 0.5s;
+  background-color: white;
+  margin: 2rem;
+  text-align: center;
+  color: #958377;
+  padding: 0.5rem;
+}
+.EvolveCard h2 {
+  color: black;
+  text-transform: capitalize;
+}
+.EvolveCard span {
+  color: grey;
+  font-size: 14px;
+}
+
+.EvolveImg {
+  height: 150px;
+  width: 150px;
+}
+
+.EvolveCard:hover {
+  bottom: 5px;
+  transition: ease-in-out 0.5s;
+}
+
+.btnPokedex{
+  z-index: 1500;
+}
+
+.PokedexList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.PokedexCard {
+  position: relative;
+  text-align: center;
+  width: 10%;
+  display: flex;
+  flex-direction: column;
+  background-color: blanchedalmond;
+  padding: 3rem;
+  margin: 3rem;
+  transition: ease-in-out 0.5s;
+}
+
+.PokedexCard:hover {
+  bottom: 5px;
+}
+
+.PokedexCard h2 {
+  color: black;
+  text-transform: capitalize;
+}
+
+.PokedexCard span {
+  color: grey;
+  font-size: 14px;
+}
+
+.PokedexCard .PKMNImg {
+  width: 150px;
+  height: 150px;
 }

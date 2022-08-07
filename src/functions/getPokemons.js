@@ -1,18 +1,33 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-export function usePokemons() {
+export function usePokemons(url) {
     const [pokemons, setPokemons] = useState([]);
 
     useEffect(() => {
         async function fetchData() {
-            const { data } = await axios.get('https://pokeapi.co/api/v2/pokemon/');
+            const { data } = await axios.get(url);
+            console.log(data);
             setPokemons(data.results);
         }
         fetchData();
     }, []); 
 
     return pokemons;
+}
+
+export function nextPokemons(url) {
+    const [pokemonsNext, setPokemonsNext] = useState("");
+
+    useEffect(() => {
+        async function fetchData() {
+            const { data } = await axios.get(url);
+            setPokemonsNext(data.next);
+        }
+        fetchData();
+    }, []); 
+    console.log(pokemonsNext)
+    return pokemonsNext;
 }
 
 export function getPokemon(id) {
